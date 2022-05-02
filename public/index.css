@@ -1,0 +1,111 @@
+* {
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 40rem;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #5c940d;
+}
+
+.container {
+    height: 32rem;
+    width: 70rem;
+    background-color: #a9e34b;
+    border-radius: 1.7%;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.start_container {
+    animation: swift 1.5s;
+}
+
+form {
+    height: 30rem;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 2.8rem;
+    color: #fff;
+}
+
+label {
+    font-weight: 500;
+}
+
+input[type="text"] {
+    height: 2.5rem;
+    width: 30rem;
+    color: #5c940d;
+}
+
+div:last-of-type {
+    margin-bottom: 3rem;
+}
+
+button {
+    background-color: #d6336c;
+    border: none;
+    font-size: 2.4rem;
+    border-radius: 0.7rem 0.5rem;
+    color: #82c91e;
+    font-weight: 700;
+    border: 0.2rem solid #d6336c;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.in_container {
+    transition: transform 0.5s;
+    transform: scale(1.1);
+}
+
+.out_container {
+    transition: transform 0.5s;
+    transform: scale(1);
+}
+
+@keyframes swift {
+    33% {
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        transform: translateX(5rem);
+        scale: 0.7;
+    }
+    66% {
+        transform: translateX(-5rem);
+        scale: 1.1;
+    }
+    99% {
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+        transform: translateX(0rem);
+    }
+}
+
+.clicked_input {
+    transition: border 0.5s;
+    border: 0.2rem solid #d6336c !important;
+}
+
+button:hover {
+    cursor: pointer;
+    transition: transform 0.5s, width 1s;
+    transform: scale(1.2);
+    font-size: 2.2rem;
+    color: #66a80f;
+    width: 50%;
+    align-self: center;
+}

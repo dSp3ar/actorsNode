@@ -19,12 +19,22 @@ app.get('/', (req, res) => {
 
 app.get('/actors', (req, res) => {
     const actors = data.Actors;
-    console.log(actors);
     res.render('actors', { actors });
 });
 
 app.get('/actors/:actor', (req, res) => {
-    
+    const actors = data.Actors;
+    found = false;
+
+    for (let actor of actors) {
+        if (actor.surname.toLocaleLowerCase() === req.params.actor) {
+            found = true;
+            res.render('actor', { actor });
+        }
+    }
+    if (!found) {
+        res.render('404');
+    }
 });
 
 app.get('*', (req, res) => {
@@ -32,10 +42,7 @@ app.get('*', (req, res) => {
 });
 
 app.post('/data', (req, res) => {
-    console.log(req.body);
     data.Actors.push(req.body);
-    console.log(data);
-    console.log(JSON.stringify(data));
     fs.writeFileSync('./data.json', JSON.stringify(data), (err) => {
         if (err) throw err;
     });

@@ -24,8 +24,3 @@ for (let input of inputs) {
         input.classList.toggle('clicked_input');
     });
 }
-
-button.addEventListener('click', (event) => {
-    //event.preventDefault();
-
-});

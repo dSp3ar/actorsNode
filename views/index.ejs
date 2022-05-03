@@ -10,30 +10,31 @@
 </head>
 <body>
     <main>
-        <h1>Enter the actor`s data to check whether he is in the DB</h1>
+        <h1>Enter the actor`s data to add him/her to DB</h1>
         <section class="container">
-            <form action="">
+            <form action="/data" method="post">
                 <div class="name">
                     <label for="name">Actor`s name: </label>
-                    <input id="name" type="text" name="name">
+                    <input id="name" type="text" name="name" required>
                 </div>
                 <div class="surname">
                     <label for="surname">Actor`s surname: </label>
-                    <input id="surname" type="text" name="surname">
+                    <input id="surname" type="text" name="surname" required>
                 </div>
                 <div class="age">
                     <label for="age">Actor`s age: </label>
-                    <input id="age" type="text" name="age">
+                    <input id="age" type="text" name="age" required>
                 </div>
                 <div class="wife">
                     <label for="wife">Actor's wife name: </label>
-                    <input id="wife" type="text" name="wife">
+                    <input id="wife" type="text" name="wife" required>
                 </div>
                 <div class="children">
                     <label for="children">Are there children?</label>
+                    <input type="hidden" name="children" value="off">
                     <input id="children" type="checkbox" name="children">
                 </div>
-                <button>Check data</button>
+                <button>Add an actor</button>
             </form>
         </section>
     </main>
